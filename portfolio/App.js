@@ -29,12 +29,13 @@ const Main = () => (
 
 
 const numbers = [
-{ target_str: "#1", img: "./img/work_thumbnail.jpg" },
-{ target_str: "#2", img: "./img/work_thumbnail2.jpg" },
-{ target_str: "#3", img: "./img/work_thumbnail3.jpg" },
+{ target_str: "#1", img: require('./img/work_thumbnail.jpg') },
+{ target_str: "#2", img: require('./img/work_thumbnail2.jpg') },
+{ target_str: "#3", img: require('./img/work_thumbnail3.jpg') },
 ]
+const teststr="test";
 const listItems = numbers.map((number) =>
-  <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> {number.img} </a></li>
+  <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> </a></li>
   );
 
 const Contact_content = (
@@ -57,7 +58,7 @@ const About = () => (
   )
 
 const Work = () => (
-  <div>Work  {listItems}  <img src={logo} /> </div>
+  <div>Work  {listItems} /> </div>
 //
 )
 

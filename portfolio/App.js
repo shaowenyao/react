@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import './App.css';
+
 
 const Header = () => (
   <header>
@@ -26,6 +26,23 @@ const Main = () => (
   </main>
   )
 
+
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>{number}</li>
+  );
+
+const Contact_content = (
+  <div >
+  <h1>Contact</h1>
+  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
+  <p><span class="glyphicon glyphicon-object-align-left" aria-hidden="true"></span><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
+  <p><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span><a href="https://www.linkedin.com/in/shaowenyao">linkedin.com/in/shaowenyao</a></p>
+  <p><span class="glyphicon glyphicon-text-color" aria-hidden="true"></span><a href="resume.docx">Resume [Word]</a></p></div>
+  );
+
+
+
 const Home = () => (
   <div>Homepage</div>
   )
@@ -35,11 +52,11 @@ const About = () => (
   )
 
 const Work = () => (
-  <div>Work</div>
+  <div>Work {listItems} </div>
   )
 
 const Contact = () => (
-  <div>Contact</div>
+  <div> {Contact_content}</div> 
   )
 const App = () => (
   <div>

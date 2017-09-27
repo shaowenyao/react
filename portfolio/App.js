@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from './img/work_thumbnail.jpg';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 
@@ -24,12 +25,16 @@ const Main = () => (
   <Route path = "/contact" component={Contact} />
   </Switch>
   </main>
-  )
+  );
 
 
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [
+{ target_str: "#1", img: "./img/work_thumbnail.jpg" },
+{ target_str: "#2", img: "./img/work_thumbnail2.jpg" },
+{ target_str: "#3", img: "./img/work_thumbnail3.jpg" },
+]
 const listItems = numbers.map((number) =>
-  <li key={number.toString()}>{number}</li>
+  <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> {number.img} </a></li>
   );
 
 const Contact_content = (
@@ -52,8 +57,9 @@ const About = () => (
   )
 
 const Work = () => (
-  <div>Work {listItems} </div>
-  )
+  <div>Work  {listItems}  <img src={logo} /> </div>
+//
+)
 
 const Contact = () => (
   <div> {Contact_content}</div> 

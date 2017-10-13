@@ -15,9 +15,38 @@ const Work_Page_Array = [
 { project_name: "project 1", img: require('./img/work_thumbnail2.jpg') }
 ]
 
+const Home_content = (
+  <div>
+  <h2>Home</h2>
+  </div>
+  );
+
+const About_content = (
+  <div class="about_page">
+  EDUCATION + SKILLS
+  Bachelor of Arts, University of California, Davis, 2008
+  HTML5 + CSS3 + LESS/SASS + jQuery
+  Javascript + ReactJS + Angular + Cordova + NPM + Github | Mobile Development
+  UI design + templates + wireframes
+  Salesforce VisualForce | Certified Developer Winter 14
+  Bootstrap + Wordpress + Drupal + GSI Commerce
+  Adobe Creative Suite 6
+  Actionscript + Flash Animation
+  Media Production: Photography + Videography
+
+  </div>
+  );
+
+const Work_Page = ({ match }) => (
+  <div>
+  {Work_Page_Array[match.params.Work_Page].project_name}
+  <img src={Work_Page_Array[match.params.Work_Page].img} />
+  </div>
+  )
+
 const Contact_content = (
-  <div >
-  <h1>Contact</h1>
+  <div class="contact_page">
+  <h2>Contact</h2>
   <p><a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
   <p><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
   <p><a href="https://www.linkedin.com/in/shaowenyao">linkedin.com/in/shaowenyao</a></p>
@@ -51,33 +80,27 @@ const Main = () => (
 
 
 const Home = () => (
-  <div>Homepage</div>
+  <div > {Home_content} </div>
   )
 
 const About = () => (
-  <div>About</div>
+  <div> {About_content} </div>
   )
 
 const Work = ({ match }) => (
-  <div>
-  Work
+  <div class="work_page">
+  <h2>Work</h2>
   <Route path={`${match.url}/:Work_Page`} component={Work_Page}/>
   <Route exact path={match.url} render={() => (
     <div>{listItems}</div>
     )}/>
   </div>
   )
-const Work_Page = ({ match }) => (
-  <div>
-  {Work_Page_Array[match.params.Work_Page].project_name}
-  <img src={Work_Page_Array[match.params.Work_Page].img} />
-  </div>
-  )
 
 const Contact = () => (
-  <div> 
-  {Contact_content}</div> 
+  <div> {Contact_content} </div> 
   )
+
 const App = () => (
   <div>
   <Header />

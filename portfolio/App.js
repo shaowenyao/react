@@ -2,6 +2,28 @@ import React, { Component } from 'react';
 import logo from './img/work_thumbnail.jpg';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
+const numbers = [
+{ target_str: "/work/0", img: require('./img/work_thumbnail.jpg') },
+{ target_str: "/work/1", img: require('./img/work_thumbnail2.jpg') },
+{ target_str: "/work/2", img: require('./img/work_thumbnail3.jpg') }
+]
+const listItems = numbers.map((number) =>
+  <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> </a></li>
+  );
+const Work_Page_Array = [
+{ project_name: "project 0", img: require('./img/work_thumbnail.jpg') },
+{ project_name: "project 1", img: require('./img/work_thumbnail2.jpg') }
+]
+
+const Contact_content = (
+  <div >
+  <h1>Contact</h1>
+  <p><a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
+  <p><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
+  <p><a href="https://www.linkedin.com/in/shaowenyao">linkedin.com/in/shaowenyao</a></p>
+  <p><a href="resume.docx">Resume [Word]</a></p>
+  </div>
+  );
 
 const Header = () => (
   <header>
@@ -28,28 +50,6 @@ const Main = () => (
   );
 
 
-const numbers = [
-{ target_str: "/work/:a1", img: require('./img/work_thumbnail.jpg') },
-{ target_str: "/work/:a2", img: require('./img/work_thumbnail2.jpg') },
-{ target_str: "/work/:a3", img: require('./img/work_thumbnail3.jpg') },
-]
-const teststr="test";
-const listItems = numbers.map((number) =>
-  <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> </a></li>
-  );
-
-const Contact_content = (
-  <div >
-  <h1>Contact</h1>
-  <p><a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
-  <p><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
-  <p><a href="https://www.linkedin.com/in/shaowenyao">linkedin.com/in/shaowenyao</a></p>
-  <p><a href="resume.docx">Resume [Word]</a></p>
-  </div>
-  );
-
-
-
 const Home = () => (
   <div>Homepage</div>
   )
@@ -61,14 +61,22 @@ const About = () => (
 const Work = ({ match }) => (
   <div>
   Work
+  <Route path={`${match.url}/:Work_Page`} component={Work_Page}/>
   <Route exact path={match.url} render={() => (
     <div>{listItems}</div>
     )}/>
   </div>
   )
+const Work_Page = ({ match }) => (
+  <div>
+  {Work_Page_Array[match.params.Work_Page].project_name}
+  <img src={Work_Page_Array[match.params.Work_Page].img} />
+  </div>
+  )
 
 const Contact = () => (
-  <div> {Contact_content}</div> 
+  <div> 
+  {Contact_content}</div> 
   )
 const App = () => (
   <div>

@@ -29,9 +29,9 @@ const Main = () => (
 
 
 const numbers = [
-{ target_str: "#1", img: require('./img/work_thumbnail.jpg') },
-{ target_str: "#2", img: require('./img/work_thumbnail2.jpg') },
-{ target_str: "#3", img: require('./img/work_thumbnail3.jpg') },
+{ target_str: "/work/:a1", img: require('./img/work_thumbnail.jpg') },
+{ target_str: "/work/:a2", img: require('./img/work_thumbnail2.jpg') },
+{ target_str: "/work/:a3", img: require('./img/work_thumbnail3.jpg') },
 ]
 const teststr="test";
 const listItems = numbers.map((number) =>
@@ -41,10 +41,11 @@ const listItems = numbers.map((number) =>
 const Contact_content = (
   <div >
   <h1>Contact</h1>
-  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
-  <p><span class="glyphicon glyphicon-object-align-left" aria-hidden="true"></span><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
-  <p><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span><a href="https://www.linkedin.com/in/shaowenyao">linkedin.com/in/shaowenyao</a></p>
-  <p><span class="glyphicon glyphicon-text-color" aria-hidden="true"></span><a href="resume.docx">Resume [Word]</a></p></div>
+  <p><a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
+  <p><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
+  <p><a href="https://www.linkedin.com/in/shaowenyao">linkedin.com/in/shaowenyao</a></p>
+  <p><a href="resume.docx">Resume [Word]</a></p>
+  </div>
   );
 
 
@@ -57,10 +58,14 @@ const About = () => (
   <div>About</div>
   )
 
-const Work = () => (
-  <div>Work  {listItems} /> </div>
-//
-)
+const Work = ({ match }) => (
+  <div>
+  Work
+  <Route exact path={match.url} render={() => (
+    <div>{listItems}</div>
+    )}/>
+  </div>
+  )
 
 const Contact = () => (
   <div> {Contact_content}</div> 

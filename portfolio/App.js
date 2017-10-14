@@ -12,9 +12,11 @@ const numbers = [
 { target_str: "/work/8", img: require('./img/work_thumbnail08.jpg') },
 { target_str: "/work/9", img: require('./img/work_thumbnail09.jpg') }
 ]
+
 const listItems = numbers.map((number) =>
   <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> </a></li>
   );
+
 const Work_Page_Array = [
 { project_name: "project 1", img: require('./img/work01.jpg') },
 { project_name: "project 2", img: require('./img/work02.jpg') },
@@ -34,7 +36,7 @@ const Home_content = (
   );
 
 const About_content = (
-  <div class="about_page">
+  <div className="about_page">
 
   <h4>EDUCATION + SKILLS</h4>
   <li>Bachelor of Arts, University of California, Davis, 2008</li>
@@ -106,7 +108,7 @@ const Work_Page = ({ match }) => (
   )
 
 const Contact_content = (
-  <div class="contact_page">
+  <div className="contact_page">
   <h2>Contact</h2>
   <p id="email"><a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
   <p id="github"><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
@@ -115,18 +117,44 @@ const Contact_content = (
   </div>
   );
 
-const Header = () => (
-  <header>
-  <nav>
-  <ul>
-  <li><Link to="/">Home</Link></li>
-  <li><Link to="/about">About</Link></li>
-  <li><Link to="/work">Work</Link></li>
-  <li><Link to="/contact">Contact</Link></li>
-  </ul>
-  </nav>
-  </header>
-  )
+
+
+const Header = React.createClass({
+  render: function() {
+    return (
+      <header>
+      <nav>
+      <div className="navWide">
+      <div className="wideDiv">
+      <Link to="/" >Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/work">Work</Link>
+      <Link to="/contact">Contact</Link>
+      </div>
+      </div>
+      <div className="navNarrow">
+      <i className="fa fa-bars fa-2x" onClick={this.burgerToggle}> Narrow Clicker</i>
+      <div className="narrowLinks">
+      <Link to="/" onClick={this.burgerToggle} >Home</Link>
+      <Link to="/about"onClick={this.burgerToggle} >About</Link>
+      <Link to="/work" onClick={this.burgerToggle} >Work</Link>
+      <Link to="/contact" onClick={this.burgerToggle} >Contact</Link>
+      </div>
+      </div>
+      </nav>
+      </header>
+      );
+  },
+  burgerToggle: function() {
+    let linksEl = document.querySelector('.narrowLinks');
+    if (linksEl.style.display === 'block') {
+      linksEl.style.display = 'none';
+    } else {
+      linksEl.style.display = 'block';
+    }
+  }
+});
+
 
 const Main = () => (
   <main>
@@ -154,7 +182,7 @@ const About = () => (
   )
 
 const Work = ({ match }) => (
-  <div class="work_page">
+  <div className="work_page">
   <h2>Work</h2>
   <Route path={`${match.url}/:Work_Page`} component={Work_Page}/>
   <Route exact path={match.url} render={() => (

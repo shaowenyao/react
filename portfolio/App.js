@@ -18,19 +18,26 @@ const listItems = numbers.map((number) =>
   );
 
 const Work_Page_Array = [
-{ project_name: "project 1", img: require('./img/work01.jpg') },
-{ project_name: "project 2", img: require('./img/work02.jpg') },
-{ project_name: "project 3", img: require('./img/work03.jpg') },
-{ project_name: "project 4", img: require('./img/work04.jpg') },
-{ project_name: "project 5", img: require('./img/work05.jpg') },
-{ project_name: "project 6", img: require('./img/work06.jpg') },
-{ project_name: "project 7", img: require('./img/work07.jpg') },
-{ project_name: "project 8", img: require('./img/work08.jpg') },
-{ project_name: "project 9", img: require('./img/work09.jpg') }
+{ project_name: "project 1", client_name:"client name", project_description:"loren ipsum", img: require('./img/work01.jpg') },
+{ project_name: "project 2", client_name:"client name", project_description:"loren ipsum", img: require('./img/work02.jpg') },
+{ project_name: "project 3", client_name:"client name", project_description:"loren ipsum", img: require('./img/work03.jpg') },
+{ project_name: "project 4", client_name:"client name", project_description:"loren ipsum", img: require('./img/work04.jpg') },
+{ project_name: "project 5", client_name:"client name", project_description:"loren ipsum", img: require('./img/work05.jpg') },
+{ project_name: "project 6", client_name:"client name", project_description:"loren ipsum", img: require('./img/work06.jpg') },
+{ project_name: "project 7", client_name:"client name", project_description:"loren ipsum", img: require('./img/work07.jpg') },
+{ project_name: "project 8", client_name:"client name", project_description:"loren ipsum", img: require('./img/work08.jpg') },
+{ project_name: "project 9", client_name:"client name", project_description:"loren ipsum", img: require('./img/work09.jpg') }
 ]
 
 const Home_content = (
   <div className="Home_content">
+  <h2>SHAOWEN YAO</h2>
+  <h3>SFBAYAREA UI DEVELOPER</h3>
+  </div>
+  );
+
+const Mobile_header_content = (
+  <div className="Mobile_header">
   <h2>SHAOWEN YAO</h2>
   <h3>SFBAYAREA UI DEVELOPER</h3>
   </div>
@@ -96,8 +103,15 @@ const About_content = (
 
 const Work_Page = ({ match }) => (
   <div>
-  {Work_Page_Array[(match.params.Work_Page-1)].project_name}
-  <img src={Work_Page_Array[(match.params.Work_Page-1)].img} />
+  <div className="half floatleft img">
+  <img className="half floatright" src={Work_Page_Array[(match.params.Work_Page-1)].img} />
+  </div>
+  <div className="floatleft desc">
+  <Link to="/work">back to WORK</Link>
+  <span className="project_name">{Work_Page_Array[(match.params.Work_Page-1)].project_name}</span>
+  <span className="client_name">{Work_Page_Array[(match.params.Work_Page-1)].client_name}</span>
+  <span className="project_description">{Work_Page_Array[(match.params.Work_Page-1)].project_description}</span>
+  </div>
   </div>
   )
 
@@ -109,7 +123,9 @@ const Contact_content = (
   </div>
   );
 
-
+const Mobile_header = () => (
+  <div > {Mobile_header_content} </div>
+  )
 
 const Header = React.createClass({
   render: function() {
@@ -175,10 +191,14 @@ const About = () => (
 
 const Work = ({ match }) => (
   <div className="work_page">
+  <div className="work_page_single">
   <Route path={`${match.url}/:Work_Page`} component={Work_Page}/>
+  </div>
+  <div className="work_page_thumbnails">
   <Route exact path={match.url} render={() => (
     <div>{listItems}</div>
     )}/>
+  </div>
   </div>
   )
 
@@ -188,6 +208,7 @@ const Contact = () => (
 
 const App = () => (
   <div>
+  <Mobile_header />
   <Header />
   <Main />
   <Footer />

@@ -18,15 +18,15 @@ const listItems = numbers.map((number) =>
   );
 
 const Work_Page_Array = [
-{ project_name: "project 1", client_name:"client name", project_description:"loren ipsum", img: require('./img/work01.jpg') },
-{ project_name: "project 2", client_name:"client name", project_description:"loren ipsum", img: require('./img/work02.jpg') },
-{ project_name: "project 3", client_name:"client name", project_description:"loren ipsum", img: require('./img/work03.jpg') },
-{ project_name: "project 4", client_name:"client name", project_description:"loren ipsum", img: require('./img/work04.jpg') },
-{ project_name: "project 5", client_name:"client name", project_description:"loren ipsum", img: require('./img/work05.jpg') },
-{ project_name: "project 6", client_name:"client name", project_description:"loren ipsum", img: require('./img/work06.jpg') },
-{ project_name: "project 7", client_name:"client name", project_description:"loren ipsum", img: require('./img/work07.jpg') },
-{ project_name: "project 8", client_name:"client name", project_description:"loren ipsum", img: require('./img/work08.jpg') },
-{ project_name: "project 9", client_name:"client name", project_description:"loren ipsum", img: require('./img/work09.jpg') }
+{ project_name: "Business Wordpress Site", client_name:"Winter Wish Studio", project_description:"The client requested a identity revamp to be rebuilt on Wordpress. We also designed it mobile-first with a desktop and mobile stylesheet. We added social media customizations and made it easy to add content for most users.", img: require('./img/work01.jpg') },
+{ project_name: "Advertising Site", client_name:"Lattice", project_description:"The objective was an attractive advertising website generate clicks for an advertising agency.", img: require('./img/work02.jpg') },
+{ project_name: "Identity Redesign", client_name:"Lattice", project_description:"The client asked for a number of options for a identity revamp in terms of a logo, and to design the identity system from the approved design.", img: require('./img/work03.jpg') },
+{ project_name: "Banner Ads", client_name:"Lattice", project_description:"The objective was to develop a variety of banner ads to encourage the user to visit the client site in question.", img: require('./img/work04.jpg') },
+{ project_name: "Triptych Letter Brochure", client_name:"UC Davis Staff Assembly", project_description:"The university asked for a print handout to be developed to be issued out to show people what the department represented.", img: require('./img/work05.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"Pure Storage", project_description:"The client presented a design to be developed within a standard Salesforce Portal with full functionality and PureStorage branding look and feel.", img: require('./img/work06.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"Guavus", project_description:"Follow the client's identity system, a full UI/UX approach was spearheaded and let by me. This was followed by graphic design comps, implementation, and deployment.", img: require('./img/work07.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"Frontrange", project_description:"Personally led a full development cycle on an internal Salesforce portal, ranging from business requirements to UI/UX to graphic design to development and deployment involving managing an offshore team.", img: require('./img/work08.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"MobileIron", project_description:"Implemented a client design with the look and feel of their corporate identity, with a mobile-friendly view.", img: require('./img/work09.jpg') }
 ]
 
 const Home_content = (
@@ -39,7 +39,6 @@ const Home_content = (
 const Mobile_header_content = (
   <div className="Mobile_header">
   <h2>SHAOWEN YAO</h2>
-  <h3>SFBAYAREA UI DEVELOPER</h3>
   </div>
   );
 
@@ -102,12 +101,11 @@ const About_content = (
   );
 
 const Work_Page = ({ match }) => (
-  <div>
+  <div className="Work_page">
   <div className="half floatleft img">
   <img className="half floatright" src={Work_Page_Array[(match.params.Work_Page-1)].img} />
   </div>
   <div className="floatleft desc">
-  <Link to="/work">back to WORK</Link>
   <span className="project_name">{Work_Page_Array[(match.params.Work_Page-1)].project_name}</span>
   <span className="client_name">{Work_Page_Array[(match.params.Work_Page-1)].client_name}</span>
   <span className="project_description">{Work_Page_Array[(match.params.Work_Page-1)].project_description}</span>
@@ -141,12 +139,12 @@ const Header = React.createClass({
       </div>
       </div>
       <div className="navNarrow">
-      <i className="fa fa-bars fa-2x" onClick={this.burgerToggle}> Narrow Clicker</i>
+      <span className="fa fa-bars fa-2x navNarrowBtn" onClick={this.burgerToggle}> &#9776;</span>
       <div className="narrowLinks">
-      <Link to="/" onClick={this.burgerToggle} >Home</Link>
-      <Link to="/about"onClick={this.burgerToggle} >About</Link>
-      <Link to="/work" onClick={this.burgerToggle} >Work</Link>
-      <Link to="/contact" onClick={this.burgerToggle} >Contact</Link>
+      <Link to="/" onClick={this.burgerToggle} >HOME</Link>
+      <Link to="/about"onClick={this.burgerToggle} >ABOUT</Link>
+      <Link to="/work" onClick={this.burgerToggle} >WORK</Link>
+      <Link to="/contact" onClick={this.burgerToggle} >CONTACT</Link>
       </div>
       </div>
       </nav>

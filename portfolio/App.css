@@ -19,7 +19,7 @@ nav a {  padding:0 5px; font-size:14px; }
 .floatright { float:right; }
 html { overflow-y:scroll; }
 a, a:visited, a:hover { color:#fff; text-decoration: none; }
-body { background:#8e8e8e; }
+body { background:#afadad; }
 header, main h2, main h3, .contact_page,  footer {  text-align:center; }
 main { margin:50px 0 10px 0; padding:0 0 10px 0; }
 main h2, main h3 { color:#3e3c38; }

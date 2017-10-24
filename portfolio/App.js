@@ -139,9 +139,8 @@ const Header = React.createClass({
       </div>
       </div>
       <div className="navNarrow">
-      <span className="fa fa-bars fa-2x navNarrowBtn" onClick={this.burgerToggle}> &#9776;</span>
+      <span className="fa fa-bars fa-2x navNarrowBtn" onClick={this.burgerToggle}>MENU</span>
       <div className="narrowLinks">
-      <Link to="/" onClick={this.burgerToggle} >HOME</Link>
       <Link to="/about"onClick={this.burgerToggle} >ABOUT</Link>
       <Link to="/work" onClick={this.burgerToggle} >WORK</Link>
       <Link to="/contact" onClick={this.burgerToggle} >CONTACT</Link>

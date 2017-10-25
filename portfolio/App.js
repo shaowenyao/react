@@ -32,13 +32,19 @@ const Work_Page_Array = [
 const Home_content = (
   <div className="Home_content">
   <h2>SHAOWEN YAO</h2>
-  <h3>SFBAYAREA UI DEVELOPER</h3>
+  <h5>frontend developer // san francisco bay area</h5>
   </div>
   );
 
 const Mobile_header_content = (
   <div className="Mobile_header">
   <h2>SHAOWEN YAO</h2>
+  </div>
+  );
+
+const Mobile_homepage_content = (
+  <div className="Mobile_homepage_content">
+  <h5>frontend developer // san francisco bay area</h5>
   </div>
   );
 
@@ -123,7 +129,8 @@ const Contact_content = (
 
 const Mobile_header = () => (
   <div > {Mobile_header_content} </div>
-  )
+  );
+
 
 const Header = React.createClass({
   render: function() {
@@ -179,7 +186,10 @@ const Footer = () => (
   )
 
 const Home = () => (
-  <div > {Home_content} </div>
+  <div>
+  {Home_content} 
+  {Mobile_homepage_content} 
+  </div>
   )
 
 const About = () => (

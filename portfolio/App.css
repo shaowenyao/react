@@ -40,6 +40,8 @@ h5 { color:#3e3c38; }
 .project_name { display: block;  font-size:13px; }
 .client_name  { display: block; font-size:15px; font-weight:bold;}
 .project_description  { display: block; font-size:12px; width:35%; margin-top:20px; }
+.Home_content h5 { text-align: center; width:100%; }
+.Mobile_homepage_content { display:none;}
 @media (max-width: 767px) {
   .navNarrowBtn { cursor: pointer; color:#fff; text-align: left; float:left; margin:10px; }
   .navNarrow { width: 100%; display:block; }
@@ -58,4 +60,5 @@ h5 { color:#3e3c38; }
   header { margin-top:-20px; }
   .Mobile_header { margin-left:10px; }
   .narrowLinks a { display:block; padding:15px 0 0 10px; }
+  .Mobile_homepage_content { display:block; padding-left:10px;  }
 }

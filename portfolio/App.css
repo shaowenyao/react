@@ -54,7 +54,8 @@ h5 { color:#3e3c38; }
   .about_page { width: 100%; }
   .contact_page, .about_page { text-align:left; padding-left:10px; }
   .about_page { padding-right:10px; }
-  main { margin-top:-5px; }
+  main { margin-top:5px; }
   header { margin-top:-20px; }
   .Mobile_header { margin-left:10px; }
+  .narrowLinks a { display:block; padding:15px 0 0 10px; }
 }

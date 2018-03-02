@@ -1,8 +1,0 @@
-.App { text-align: center; margin:20px; }
-.ui.unstackable.items { width: 500px; margin: 0 auto; }
-.description, .extra { text-align: left; }
-.header, .description, .extra { float:left; clear:left; }
-
-@media (max-width: 767px) {
-  .ui.unstackable.items { width: 100%; }
-}

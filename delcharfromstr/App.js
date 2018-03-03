@@ -1,140 +1,53 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Foo_1 from './funcs';
-import Char from './ex2';
-
-//EXERCISE 1
-const UserInput = (props) => {
-  return (
-    <div> 
-    <input type="text" onChange={props.changed}  /> 
-    </div>
-    );  
-}
-
-const UserOutput = (props) => {
-  return (
-    <div> 
-    Username: {props.userName} 
-    </div>
-    )  
-}
-//END EXERCISE 1
-
+import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 class App extends Component {
   state = {
-    exercise1_username: [ {username: 'default'}],
-    passengers: [
-    { plane:'United', message:'learing to fly with Asiana!', seatnumber:11 },
-    { plane:'American', message:'bad airline', seatnumber:21 } ,
-    { plane:'Virgin', message:'the friendly skies', seatnumber:91 }
-    ],
-    showPassengers: false
+    userInput: ''
   }
 
-  //EXERCISE 1
-  exercise1_changeUserName = (event) => {
-    this.setState( {
-      exercise1_username: [ {username: event.target.value}]
+  inputChangedHandler = ( event ) => {
+    this.setState( { userInput: event.target.value } );
+  }
+
+  deleteCharHandler = ( index ) => {
+    const text = this.state.userInput.split('');
+    text.splice(index, 1);
+    const updatedText = text.join('');
+    this.setState({userInput: updatedText});
+  }
+
+  render () {
+    const charList = this.state.userInput.split('').map((ch, index) => {
+      return <Char 
+        character={ch} 
+        key={index}
+        clicked={() => this.deleteCharHandler(index)} />;
     });
-  }
-  //END EXERCISE 1
-
-
-  switchPassenger = (newPlane) => {
-    this.setState( {
-      passengers: [
-      { plane: newPlane, message:"I love japan" },
-      { plane:'Asiana', message:"I love japan" },
-      { plane:'Asiana', message:"I love japan" }  
-      ]
-    });
-  }
-
-  nameChangedPassenger = (event) => {
-    this.setState( {
-      passengers: [
-      { plane: event.target.value, message:"I love japan" },
-      { plane:'Asiana', message:"I love japan" },
-      { plane:'Asiana', message:"I love japan" }  
-      ]
-    });
-  }
-
-  togglePassenger = () => {
-    const doesShow = this.state.showPassengers;
-    this.setState({showPassengers: !doesShow});
-    console.log( this.state.showPassengers );
-  }
-
-
-  render() {
-
-    const inLineStyle = {
-      border: 'solid 1px blue'
-    };
-
-    let passengers2 = null; 
-    if (this.state.showPassengers) {
-      passengers2 = (
-        <div>
-        <Foo_1 plane={this.state.passengers[0].plane}> {this.state.passengers[0].message} </Foo_1> 
-        <Foo_1 plane={this.state.passengers[1].plane}> {this.state.passengers[1].message} </Foo_1> 
-        <Foo_1 plane={this.state.passengers[2].plane}> {this.state.passengers[2].message} </Foo_1> 
-        List vers <br />
-        {this.state.passengers.map ( (passengers, index) => {
-          return <Foo_1 key={passengers.seatnumber}  plane={passengers.plane} message={passengers.message} />
-        })}
-        </div>
-        );
-    }
 
     return (
       <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React</h1>
-      </header>
-      <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-
-      <hr />
-
-      <Foo_1 plane="Alanis" > Isn't it Ironic? </Foo_1> 
-      <br /> 
-      <Foo_1 plane={this.state.passengers[0].plane} changed={this.nameChangedPassenger} > {this.state.passengers[0].message} | <a onClick={this.switchPassenger.bind(this, 'Air China')}>switch to Air China</a></Foo_1> 
-      <Foo_1 plane={this.state.passengers[1].plane}> {this.state.passengers[1].message} </Foo_1> 
-      <Foo_1 plane={this.state.passengers[2].plane} > {this.state.passengers[2].message} </Foo_1> 
-      <button onClick={this.switchPassenger.bind(this, 'Asiana')} style={inLineStyle}  >Switch to Asiana with binding</button><br/>
-    <button onClick={ () => this.switchPassenger("SouthWest") } >Switch to Southwest with anoym arrow function without bind </button> {/* inefficiency, bind recommended */}
-
-    <hr />
-
-    Assignment 1<br />
-    <UserInput changed={this.exercise1_changeUserName}></UserInput>
-    <UserOutput userName={this.state.exercise1_username[0].username}></UserOutput>
-
-    <hr />
-
-    {this.state.showPassengers === true ? 
-      <div>
-      <Foo_1 plane={this.state.passengers[0].plane}> {this.state.passengers[0].message} </Foo_1> 
-      <Foo_1 plane={this.state.passengers[1].plane}> {this.state.passengers[1].message} </Foo_1> 
-      <Foo_1 plane={this.state.passengers[2].plane}> {this.state.passengers[2].message} </Foo_1> 
-      </div> : null
-    }
-    <button onClick={this.togglePassenger} >Switch Passengers </button> 
-
-    <hr />
-
-    { passengers2 }
-    <button onClick={this.togglePassenger} >Switch Passengers List w/map </button>
-
-    <hr />
-
+        <ol>
+          <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
+          <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
+          <li>Inside the ValidationComponent, either output "Text too short" or "Text long enough" depending on the text length (e.g. take 5 as a minimum length)</li>
+          <li>Create another component (=> CharComponent) and style it as an inline box (=> display: inline-block, padding: 16px, text-align: center, margin: 16px, border: 1px solid black).</li>
+          <li>Render a list of CharComponents where each CharComponent receives a different letter of the entered text (in the initial input field) as a prop.</li>
+          <li>When you click a CharComponent, it should be removed from the entered text.</li>
+        </ol>
+        <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
+        <hr />
+        <input
+          type="text"
+          onChange={this.inputChangedHandler}
+          value={this.state.userInput} />
+        <p>{this.state.userInput}</p>
+        <Validation inputLength={this.state.userInput.length} />
+        {charList}
+      </div>
+    );
   }
 }
 

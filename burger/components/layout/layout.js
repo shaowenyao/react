@@ -1,14 +1,15 @@
 import React from 'react';
 import Auxdiv from "../../hoc/auxdiv";
 import classes from './layout.css';
+import Toolbar from '../navigation/toolbar/toolbar';
 
 const layout = (props) => (
 	<Auxdiv>
-	<div>Toolbar, SideDrawer, Backdrop</div>
+	<Toolbar />
 	<main className={classes.Content}>
 	{props.children}
 	</main>
 	</Auxdiv>
 	);
 
-	export default layout;
+export default layout;

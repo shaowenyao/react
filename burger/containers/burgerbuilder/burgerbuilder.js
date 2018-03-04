@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Auxdiv from '../../hoc/auxdiv';
+import Auxdiv from '../../hoc/auxdiv/auxdiv';
 import Burger from '../../components/burger/burger';
 import BuildControls from '../../components/burger/buildcontrols/buildcontrols';
 import Modal from '../../components/UI/modal/modal';
@@ -97,7 +97,7 @@ class BurgerBuilder extends Component {
 			/>
 			</Auxdiv>
 			);
-	};
-}
+		};
+	}
 
-export default BurgerBuilder;
+	export default BurgerBuilder;

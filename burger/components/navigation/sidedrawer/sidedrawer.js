@@ -5,17 +5,24 @@ import classes from './sidedrawer.css';
 import Backdrop from '../../UI/backdrop/backdrop';
 import Auxdiv from '../../../hoc/auxdiv';
 
-const sideDrawer = (props) => {
+const sideDrawer = ( props ) => {
+	let attachedClasses = [classes.SideDrawer, classes.Close];
+	if (props.open) {
+		attachedClasses = [classes.SideDrawer, classes.Open];
+	}
 	return (
 		<Auxdiv>
-		<div className={classes.sideDrawer} >
+		<Backdrop show={props.open} clicked={props.closed}/>
+		<div className={attachedClasses.join(' ')}>
 		<div className={classes.Logo}>
 		<Logo />
 		</div>
-		<nav><NavigationItems /></nav>
+		<nav>
+		<NavigationItems />
+		</nav>
 		</div>
 		</Auxdiv>
 		);
-}
+};
 
 export default sideDrawer;

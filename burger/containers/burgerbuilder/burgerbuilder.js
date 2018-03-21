@@ -130,19 +130,18 @@ class BurgerBuilder extends Component {
 				/>
 				</Auxdiv>
 				);
-				orderSummary = <OrderSummary ingredients={this.state.ingredients} purchaseCancelled={this.purchaseCancelHander} purchaseContinued={this.purchaseContinueHandler} price={this.state.totalPrice}/>
+			orderSummary = <OrderSummary ingredients={this.state.ingredients} purchaseCancelled={this.purchaseCancelHander} purchaseContinued={this.purchaseContinueHandler} price={this.state.totalPrice}/>
+		}
+		if ( this.state.loading  ) {
+			orderSummary = <Spinner />;
+		}
+		return(
+			<Auxdiv>
+			<Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHander}> {orderSummary} </Modal>
+			{ burger }
+			</Auxdiv>
+			);
+	};
+}
 
-			}
-			if ( this.state.loading  ) {
-				orderSummary = <Spinner />;
-			}
-			return(
-				<Auxdiv>
-				<Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHander}> {orderSummary} </Modal>
-				{ burger }
-				</Auxdiv>
-				);
-		};
-	}
-
-	export default withErrorHandler(BurgerBuilder, axios);
+export default withErrorHandler(BurgerBuilder, axios);

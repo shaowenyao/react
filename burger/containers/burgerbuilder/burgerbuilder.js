@@ -26,6 +26,7 @@ class BurgerBuilder extends Component {
 	}
 
 	componentDidMount () {
+		console.log(this.props);
 		axios.get('https://react-my-burger-7f72c.firebaseio.com/ingredients.json')
 		.then (response => {
 			this.setState({ingredients:response.data});
@@ -84,7 +85,7 @@ class BurgerBuilder extends Component {
 
 	purchaseContinueHandler = () => {
 		//alert("continue");
-		this.setState({loading:true})
+		/*this.setState({loading:true})
 		const order = {
 			ingredients: this.state.ingredients,
 			price: this.state.totalPrice,
@@ -105,7 +106,8 @@ class BurgerBuilder extends Component {
 		})
 		.catch( errpr => {
 			this.setState({ loading:false, purchasing: false });
-		});
+		});*/
+		this.props.history.push('/checkout');
 	}
 	render () {
 		const disabledInfo = { ...this.state.ingredients }
@@ -128,19 +130,19 @@ class BurgerBuilder extends Component {
 				/>
 				</Auxdiv>
 				);
-			orderSummary = <OrderSummary ingredients={this.state.ingredients} purchaseCancelled={this.purchaseCancelHander} purchaseContinued={this.purchaseContinueHandler} price={this.state.totalPrice}/>
+				orderSummary = <OrderSummary ingredients={this.state.ingredients} purchaseCancelled={this.purchaseCancelHander} purchaseContinued={this.purchaseContinueHandler} price={this.state.totalPrice}/>
 
-		}
-		if ( this.state.loading  ) {
-			orderSummary = <Spinner />;
-		}
-		return(
-			<Auxdiv>
-			<Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHander}> {orderSummary} </Modal>
-			{ burger }
-			</Auxdiv>
-			);
-	};
-}
+			}
+			if ( this.state.loading  ) {
+				orderSummary = <Spinner />;
+			}
+			return(
+				<Auxdiv>
+				<Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHander}> {orderSummary} </Modal>
+				{ burger }
+				</Auxdiv>
+				);
+		};
+	}
 
-export default withErrorHandler(BurgerBuilder, axios);
+	export default withErrorHandler(BurgerBuilder, axios);

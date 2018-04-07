@@ -17,38 +17,38 @@ const listItems = numbers.map((number) =>
   <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> </a></li>
   );
 
-  const Work_Page_Array = [
-  { project_name: "Business Wordpress Site", client_name:"Our Poke Place", project_description:"Create a business website in Wordpress with the client’s brand identity. We also designed it mobile-first with a desktop and mobile stylesheet. We added social media customizations and made it easy to add content for most users.", img: require('./img/work01.jpg') },
-  { project_name: "Advertising Site", client_name:"Lattice", project_description:"The objective was an attractive advertising website generate clicks for an advertising agency.", img: require('./img/work02.jpg') },
-  { project_name: "Identity Redesign", client_name:"Lattice", project_description:"The client asked for a number of options for a identity revamp in terms of a logo, and to design the identity system from the approved design.", img: require('./img/work03.jpg') },
-  { project_name: "Banner Ads", client_name:"Lattice", project_description:"The objective was to develop a variety of banner ads to encourage the user to visit the client site in question.", img: require('./img/work04.jpg') },
-  { project_name: "UX Moble App Study", client_name:"Quickbooks", project_description:"Rework the App to be more user-friendly, and to incorporate features from competitors like Freshbooks with more modern App redesigns.", img: require('./img/work05.jpg') },
-  { project_name: "Internal Salesforce Portal", client_name:"Pure Storage", project_description:"The client presented a design to be developed within a standard Salesforce Portal with full functionality and PureStorage branding look and feel.", img: require('./img/work06.jpg') },
-  { project_name: "Internal Salesforce Portal", client_name:"Guavus", project_description:"Follow the client's identity system, a full UI/UX approach was spearheaded and let by me. This was followed by graphic design comps, implementation, and deployment.", img: require('./img/work07.jpg') },
-  { project_name: "Internal Salesforce Portal", client_name:"Frontrange", project_description:"Personally led a full development cycle on an internal Salesforce portal, ranging from business requirements to UI/UX to graphic design to development and deployment involving managing an offshore team.", img: require('./img/work08.jpg') },
-  { project_name: "Internal Salesforce Portal", client_name:"MobileIron", project_description:"Implemented a client design with the look and feel of their corporate identity, with a mobile-friendly view.", img: require('./img/work09.jpg') }
-  ]
+const Work_Page_Array = [
+{ project_name: "Business Wordpress Site", client_name:"Our Poke Place", project_description:"Create a business website in Wordpress with the client’s brand identity. We also designed it mobile-first with a desktop and mobile stylesheet. We added social media customizations and made it easy to add content for most users.", img: require('./img/work01.jpg') },
+{ project_name: "Advertising Site", client_name:"Lattice", project_description:"The objective was an attractive advertising website generate clicks for an advertising agency.", img: require('./img/work02.jpg') },
+{ project_name: "Identity Redesign", client_name:"Lattice", project_description:"The client asked for a number of options for a identity revamp in terms of a logo, and to design the identity system from the approved design.", img: require('./img/work03.jpg') },
+{ project_name: "Banner Ads", client_name:"Lattice", project_description:"The objective was to develop a variety of banner ads to encourage the user to visit the client site in question.", img: require('./img/work04.jpg') },
+{ project_name: "UX Moble App Study", client_name:"Quickbooks", project_description:"Rework the App to be more user-friendly, and to incorporate features from competitors like Freshbooks with more modern App redesigns.", img: require('./img/work05.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"Pure Storage", project_description:"The client presented a design to be developed within a standard Salesforce Portal with full functionality and PureStorage branding look and feel.", img: require('./img/work06.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"Guavus", project_description:"Follow the client's identity system, a full UI/UX approach was spearheaded and let by me. This was followed by graphic design comps, implementation, and deployment.", img: require('./img/work07.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"Frontrange", project_description:"Personally led a full development cycle on an internal Salesforce portal, ranging from business requirements to UI/UX to graphic design to development and deployment involving managing an offshore team.", img: require('./img/work08.jpg') },
+{ project_name: "Internal Salesforce Portal", client_name:"MobileIron", project_description:"Implemented a client design with the look and feel of their corporate identity, with a mobile-friendly view.", img: require('./img/work09.jpg') }
+]
 
-  const Home_content = (
+const Home_content = (
   <div className="Home_content">
   <h2>SHAOWEN YAO</h2>
   <h5>UX + DEV // san francisco bay area</h5>
   </div>
   );
 
-  const Mobile_header_content = (
+const Mobile_header_content = (
   <div className="Mobile_header">
   <h2>SHAOWEN YAO</h2>
   </div>
   );
 
-  const Mobile_homepage_content = (
+const Mobile_homepage_content = (
   <div className="Mobile_homepage_content">
   <h5>frontend developer // san francisco bay area</h5>
   </div>
   );
 
-  const About_content = (
+const About_content = (
   <div className="about_page">
 
   <h5>EDUCATION + SKILLS</h5>
@@ -106,7 +106,7 @@ const listItems = numbers.map((number) =>
   </div>
   );
 
-  const Work_Page = ({ match }) => (
+const Work_Page = ({ match }) => (
   <div className="Work_page">
   <div className="half floatleft img">
   <img className="half floatright" src={Work_Page_Array[(match.params.Work_Page-1)].img} />
@@ -119,7 +119,7 @@ const listItems = numbers.map((number) =>
   </div>
   )
 
-  const Contact_content = (
+const Contact_content = (
   <div className="contact_page">
   <p id="email"><a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
   <p id="github"><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
@@ -127,14 +127,22 @@ const listItems = numbers.map((number) =>
   </div>
   );
 
-  const Mobile_header = () => (
+const Mobile_header = (
   <div > {Mobile_header_content} </div>
   );
 
 
-  const Header = React.createClass({
-    render: function() {
-      return (
+class Header extends React.Component{
+  burgerToggle() {
+    let linksEl = document.querySelector('.narrowLinks');
+    if (linksEl.style.display === 'block') {
+      linksEl.style.display = 'none';
+    } else {
+      linksEl.style.display = 'block';
+    }
+  }
+  render () {
+    return (
       <header>
       <nav>
       <div className="navWide">
@@ -156,19 +164,11 @@ const listItems = numbers.map((number) =>
       </nav>
       </header>
       );
-    },
-    burgerToggle: function() {
-      let linksEl = document.querySelector('.narrowLinks');
-      if (linksEl.style.display === 'block') {
-        linksEl.style.display = 'none';
-      } else {
-        linksEl.style.display = 'block';
-      }
-    }
-  });
+  }
+};
 
 
-  const Main = () => (
+const Main = () => (
   <main>
   <Switch>
   <Route exact path="/" component={Home} />
@@ -179,24 +179,24 @@ const listItems = numbers.map((number) =>
   </main>
   );
 
-  const Footer = () => (
+const Footer = (
   <footer>
   <span><a href="https://github.com/shaowenyao">Github</a> | <a href="https://www.linkedin.com/in/shaowenyao/">LinkedIn</a> | powered by <a href="https://reactjs.org/">ReactJS v4</a></span>
   </footer>
   )
 
-  const Home = () => (
+const Home = () => (
   <div>
   {Home_content} 
   {Mobile_homepage_content} 
   </div>
   )
 
-  const About = () => (
+const About = () => (
   <div> {About_content} </div>
   )
 
-  const Work = ({ match }) => (
+const Work = ({ match }) => (
   <div className="work_page">
   <div className="work_page_single">
   <Route path={`${match.url}/:Work_Page`} component={Work_Page}/>
@@ -205,21 +205,21 @@ const listItems = numbers.map((number) =>
   <Route exact path={match.url} render={() => (
     <div>{listItems}</div>
     )}/>
-    </div>
-    </div>
-    )
+  </div>
+  </div>
+  )
 
-    const Contact = () => (
-    <div> {Contact_content} </div> 
-    )
+const Contact = () => (
+  <div> {Contact_content} </div> 
+  )
 
-    const App = () => (
-    <div>
-    <Mobile_header />
-    <Header />
-    <Main />
-    <Footer />
-    </div>
-    )
+const App = () => (
+  <div>
+  { Mobile_header }
+  <Header />
+  <Main />
+  { Footer }
+  </div>
+  )
 
-    export default App;
+export default App;

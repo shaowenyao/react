@@ -1,32 +1,38 @@
-import React, {Component} from 'react';
-import Auxdiv from "../auxdiv/auxdiv";
-import classes from './layout.css';
-import Toolbar from '../../components/navigation/toolbar/toolbar';
-import SideDrawer from '../../components/navigation/sidedrawer/sidedrawer';
+import React, { Component } from 'react';
+
+import Aux from '../Aux/Aux';
+import classes from './Layout.css';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
-	state = {
-		showSideDrawer: false
-	}
-	sideDrawerClosedHanlder = () => {
-		this.setState({showSideDrawer: false})
-	}
-	sideDrawerToggleHandler = () => {
-		this.setState( ( prevState ) => {
-			return { showSideDrawer: !prevState.showSideDrawer };
-		});
-	}
-	render () {
-		return (
-			<Auxdiv>
-			<Toolbar drawerToogleClicked={this.sideDrawerToggleHandler} />
-			<SideDrawer open={this.state.showSideDrawer } closed={this.sideDrawerClosedHanlder} />
-			<main className={classes.Content}>
-			{this.props.children}
-			</main>
-			</Auxdiv>
-			);
-	}
+    state = {
+        showSideDrawer: false
+    }
+
+    sideDrawerClosedHandler = () => {
+        this.setState( { showSideDrawer: false } );
+    }
+
+    sideDrawerToggleHandler = () => {
+        this.setState( ( prevState ) => {
+            return { showSideDrawer: !prevState.showSideDrawer };
+        } );
+    }
+
+    render () {
+        return (
+            <Aux>
+                <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
+                <SideDrawer
+                    open={this.state.showSideDrawer}
+                    closed={this.sideDrawerClosedHandler} />
+                <main className={classes.Content}>
+                    {this.props.children}
+                </main>
+            </Aux>
+        )
+    }
 }
 
 export default Layout;

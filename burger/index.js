@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { createStore } from 'redux';
 
 =======
+=======
+>>>>>>> parent of b10552e... burger redux extension
 import { createStore} from 'redux';
 import registerServiceWorker from './registerServiceWorker';
 >>>>>>> parent of b10552e... burger redux extension

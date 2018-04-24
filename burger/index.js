@@ -2,8 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+<<<<<<< HEAD
 import { createStore } from 'redux';
 
+=======
+import { createStore} from 'redux';
+import registerServiceWorker from './registerServiceWorker';
+>>>>>>> parent of b10552e... burger redux extension
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';

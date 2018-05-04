@@ -6,12 +6,17 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import App from './App';
 import burgerBuilderReducer from './store/reducers/burgerBuilder';
-import { createStore, applyMiddleware, compose } from 'redux';
+import orderReducer from './store/reducers/order';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const rootReducer = combineReducers({ 
+	burgerBuilder: burgerBuilderReducer,
+	order: orderReducer
+});
 const store = createStore(
-	burgerBuilderReducer, composeEnhancers(
+	rootReducer, composeEnhancers(
 		applyMiddleware(thunk)
 		));
 

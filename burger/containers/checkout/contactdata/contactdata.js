@@ -97,13 +97,12 @@ class contactData extends Component {
 
 	orderHandler = (event) => {
 		event.preventDefault();
-		this.setState({loading:true})
 		const formData = {};
 		for (let formElementIdentifier in this.state.orderForm) {
 			formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
 		}
 		const order = {
-			ingredients: this.props.ingredients,
+			ingredients: this.props.ings,
 			price: this.props.price,
 			orderData: formData
 		}
@@ -182,9 +181,9 @@ class contactData extends Component {
 
 const mapStateToProps = state => {
 	return {
-		ings: state.ingredients,
-		price: state.totalPrice,
-		loading: state.loading
+		ings: state.burgerBuilder.ingredients,
+		price: state.burgerBuilder.totalPrice,
+		loading: state.order.loading
 	};
 }
 
@@ -194,4 +193,4 @@ const mapDispatchToProps = dispatch => {
 	};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (withErrorHandler(contactData,axios));
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(contactData,axios));

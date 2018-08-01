@@ -144,6 +144,7 @@ class Header extends React.Component{
   }
   render () {
     return (
+
       <header>
       <nav>
       <div className="navWide">
@@ -202,8 +203,7 @@ const Work = ({ match }) => (
   <div className="work_page_single">
   <Route path={`${match.url}/:Work_Page`} component={Work_Page}/>
   </div>
-  <div className="work_page_thumbnails">
-  <Route exact path={match.url} render={() => (
+  <div className="work_page_thumbnails"> <Route exact path={match.url} render={() => (
     <div>{listItems}</div>
     )}/>
   </div>
@@ -215,12 +215,14 @@ const Contact = () => (
   )
 
 const App = () => (
+      <BrowserRouter>
   <div>
   { Mobile_header }
   <Header />
   <Main />
   { Footer }
   </div>
+  </BrowserRouter>
   )
 
 export default App;

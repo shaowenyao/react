@@ -75,14 +75,15 @@ const About_content = (
 
   <li>Mobile website development of user-friendly websites for the general public to be 100% responsive and usable</li>
   <li>Emphasis on cross-browser, ARIA, and other disabled user interface features for the general public to make UI accessible for all users</li>
-  <li>Mobile application development (Cordova/Angular/NPM/Github) for user-based applications</li>
+  <li>Mobile application development (Cordova/Angular/NPM/Github) for user-based applications. Implemented geolocation module based on restaurant rating JSON feed using google and other APIs mirroring the Yelp/Gmaps interface UI.
+.</li>
   <li>Designing UI/UX interactive flows for front-facing mobile and web initiatives to improve usability</li>
   <li>CMS development with Vision + Drupal CMS for internal government departments for website refresh</li>
 
   <h5>PERFICIENT INC <br /> Technical Consultant <br /> 01.2013 - 03.2014</h5>
 
   <li>Salesforce VisualForce development for custom client solutions</li>
-  <li>UI development (CSS/HTML/JS) for custom client user interface (ex. MobileIron, Frontrange)</li>
+  <li>UI development (CSS/HTML/JS) for custom client user interface (ex. MobileIron, Frontrange). Simultaneously worked on 20 projects as sole designer/developer and project management of offshore development teams.</li>
   <li>Mobile platform development with emphasis on responsive design for big clients (ex, Kabam)</li>
   <li>Spearheaded wireframes, XHTML code and CSS for custom solution for fortune 500 clients</li>
   <li>Emphasis on interactivity and user-friendly web products for client-facing portals to improve traffic and conversion rates up to 50%</li>
@@ -97,7 +98,7 @@ const About_content = (
   <li>CMS & eCommerce content maintenance (GSI commerce) and management</li>
   <li>Developing weekly marketing campaign assets such as emails, front page content, and seasonal campaigns in HTML/CSS/JS</li>
 
-  <h5>TELAVA NETWORKS <br /> Web Developer <br /> 06.2008 - 10.2010</h5>
+  <h5>TELAVA NETWORKS (early startup) <br /> Web Developer <br /> 06.2008 - 10.2010</h5>
 
   <li>Implemented wireframes in XHTML, ASP.NET and CSS to improve user-centered design (UCD) efforts for numerous pages</li>
   <li>Implemented UI/UX for dynamic back-end content (eCommerce, sign-up, etc) to be user-friendly and follow company creative identity</li>

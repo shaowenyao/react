@@ -18,8 +18,8 @@ const listItems = numbers.map((number) =>
   );
 
 const Work_Page_Array = [
-{ project_name: "Business Wordpress Site", client_name:"Our Poke Place", project_description:"Create a business website in Wordpress with the client’s brand identity. We also designed it mobile-first with a desktop and mobile stylesheet. We added social media customizations and made it easy to add content for most users.", img: require('./img/work01.jpg') },
-{ project_name: "Advertising Site", client_name:"Lattice", project_description:"The objective was an attractive advertising website generate clicks for an advertising agency.", img: require('./img/work02.jpg') },
+{ project_name: "Our Poke Place", client_name:"Our Poke Place", project_description:"Create a business website in Wordpress with the client’s brand identity. We also designed it mobile-first with a desktop and mobile stylesheet. We added social media customizations and made it easy to add content for most users.", img: require('./img/work01.jpg') },
+{ project_name: "Ajna Living", client_name:"Ajna Living", project_description:"Redesigned and rebranded online business site based on BigCommerce platform. Multiple UI customizations, responsive design, and backend eCommerce functionality with HTML/CSS/JS.", img: require('./img/work02.jpg') },
 { project_name: "Identity Redesign", client_name:"Lattice", project_description:"The client asked for a number of options for a identity revamp in terms of a logo, and to design the identity system from the approved design.", img: require('./img/work03.jpg') },
 { project_name: "Banner Ads", client_name:"Lattice", project_description:"The objective was to develop a variety of banner ads to encourage the user to visit the client site in question.", img: require('./img/work04.jpg') },
 { project_name: "UX Moble App Study", client_name:"Quickbooks", project_description:"Rework the App to be more user-friendly, and to incorporate features from competitors like Freshbooks with more modern App redesigns.", img: require('./img/work05.jpg') },

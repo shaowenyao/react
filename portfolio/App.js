@@ -122,9 +122,10 @@ const Work_Page = ({ match }) => (
 
 const Contact_content = (
   <div className="contact_page">
-  <p id="email"><a href="mailto:dsydesign@gmail.com">dsydesign@gmail.com</a></p>
-  <p id="github"><a href="https://github.com/shaowenyao">github.com/shaowenyao</a></p>
-  <p id="linkedin"><a href="https://www.linkedin.com/in/shaowenyao">linkedin.com/in/shaowenyao</a></p>
+  <p id="email"><a href="mailto:dsydesign@gmail.com">Email</a></p>
+  <p id="github"><a href="https://github.com/shaowenyao">GitHub</a></p>
+  <p id="github"><a href="https://www.hackerrank.com/dsydesign">HackerRank</a></p>
+  <p id="linkedin"><a href="https://www.linkedin.com/in/shaowenyao">LinkedIn</a></p>
   </div>
   );
 

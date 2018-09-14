@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import pdf0 from './img/resume.pdf';
+import pdf1 from './img/RESUME_AI.pdf';
+import pdf2 from './img/RESUME_AI_SKETCH.pdf';
 
 const numbers = [
 { target_str: "/work/1", img: require('./img/work_thumbnail01.jpg') },
@@ -13,6 +16,10 @@ const numbers = [
 { target_str: "/work/9", img: require('./img/work_thumbnail09.jpg') }
 ]
 
+const design_pdf = [
+{ target_str: "/work/1", img: require('./img/work_thumbnail01.jpg') },
+{ target_str: "/work/2", img: require('./img/work_thumbnail02.jpg') }
+]
 const listItems = numbers.map((number) =>
   <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> </a></li>
   );
@@ -126,6 +133,9 @@ const Contact_content = (
   <p id="github"><a href="https://github.com/shaowenyao">GitHub</a></p>
   <p id="github"><a href="https://www.hackerrank.com/dsydesign">HackerRank</a></p>
   <p id="linkedin"><a href="https://www.linkedin.com/in/shaowenyao">LinkedIn</a></p>
+    <p id="linkedin"><a href={pdf0}>Resume</a></p>
+    <p id="linkedin"><a href={pdf1}>UX highlight</a></p>
+    <p id="linkedin"><a href={pdf2}>UX studies</a></p>
   </div>
   );
 

@@ -5,13 +5,12 @@ import Footer from './components/footer';
 import {Mobile_header, Main} from './components/menu';
 
 const App = () => (
-      <BrowserRouter>
-  <div>
-  { Mobile_header }
-  <Header />
-  <Main />
-  { Footer }
-  </div>
+  <BrowserRouter>
+    <div>
+      <Header />
+      <Main />
+      { Footer }
+    </div>
   </BrowserRouter>
   )
 

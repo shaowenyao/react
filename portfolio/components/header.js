@@ -17,17 +17,16 @@ class Header extends React.Component{
         <nav>
         <div className="navWide">
         <div className="wideDiv">
-        <Link to="/" >HOME</Link>
+        <Link to="/">WORK</Link>
         <Link to="/about">ABOUT</Link>
-        <Link to="/work">WORK</Link>
         <Link to="/contact">CONTACT</Link>
         </div>
         </div>
         <div className="navNarrow">
         <span className="fa fa-bars fa-2x navNarrowBtn" onClick={this.burgerToggle}>MENU</span>
         <div className="narrowLinks">
+        <Link to="/" onClick={this.burgerToggle} >WORK</Link>
         <Link to="/about"onClick={this.burgerToggle} >ABOUT</Link>
-        <Link to="/work" onClick={this.burgerToggle} >WORK</Link>
         <Link to="/contact" onClick={this.burgerToggle} >CONTACT</Link>
         </div>
         </div>

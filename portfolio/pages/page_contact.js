@@ -2,6 +2,8 @@ import React from 'react';
 import pdf0 from '../assets/img/resume.pdf';
 import pdf1 from '../assets/img/RESUME_AI.pdf';
 import pdf2 from '../assets/img/RESUME_AI_SKETCH.pdf';
+import './pages.css';
+import './page_contact.css';
 
 const Contact_content = (
     <div className="contact_page">
@@ -15,8 +17,8 @@ const Contact_content = (
     </div>
     );
     
-    
-    const Contact = () => (
+  
+ const Contact = () => (
       <div> {Contact_content} </div> 
       )
 

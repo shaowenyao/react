@@ -1,4 +1,6 @@
 import React from 'react';
+import './pages.css';
+import './page_about.css';
 
 const About = () => (
   <div> {About_content} </div>

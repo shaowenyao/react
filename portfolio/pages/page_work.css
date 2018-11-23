@@ -8,9 +8,10 @@ body .row { padding-left:15px !important; }
    
 }
 @media only screen and (min-width:768px) {
-    .work_page_thumbnails_container{ overflow:hidden; height:50vh;}
-    .workThumb img { width: 100%; }
-    body .row { margin-right:0px;}
+    .work_page_thumbnails_container{ overflow:hidden; height:25vh; margin-top:15px; }
+    .workThumb img { }
+    body .row { margin-right:15px;}
+    .projdesc { margin-top:15px; }
 }
 
 body .projdesc { padding:15px; background:#ebe9e9; }

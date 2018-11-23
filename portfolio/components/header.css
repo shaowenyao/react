@@ -20,7 +20,7 @@
 
 /* DESKTOP */
 body #desktopMenu #logo { width:85%; }
-body #desktopMenu #logo img { width:30%; height:auto; } 
+body #desktopMenu #logo img { width:15%; height:auto; } 
 body #header #desktopMenu .nav-link { padding-left:0.25em; padding-right:0.25em; color:#575151; }
 body #header #desktopMenu .textlink { padding-top: 30px; display: inline-block; }
 

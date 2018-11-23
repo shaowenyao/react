@@ -1,25 +1,25 @@
 import React from 'react';
 
 const numbers = [
-    { target_str: "/work/1", img: require('./assets/img/work_thumbnail01.jpg') },
-    { target_str: "/work/2", img: require('./assets/img/work_thumbnail02.jpg') },
-    { target_str: "/work/3", img: require('./assets/img/work_thumbnail03.jpg') },
-    { target_str: "/work/4", img: require('./assets/img/work_thumbnail04.jpg') },
-    { target_str: "/work/5", img: require('./assets/img/work_thumbnail05.jpg') },
-    { target_str: "/work/6", img: require('./assets/img/work_thumbnail06.jpg') },
-    { target_str: "/work/7", img: require('./assets/img/work_thumbnail07.jpg') },
-    { target_str: "/work/8", img: require('./assets/img/work_thumbnail08.jpg') },
-    { target_str: "/work/9", img: require('./assets/img/work_thumbnail09.jpg') }
+        { target_str: "/work/1", img: require('./assets/img/work_thumbnail01.jpg') },
+        { target_str: "/work/2", img: require('./assets/img/work_thumbnail02.jpg') },
+        { target_str: "/work/3", img: require('./assets/img/work_thumbnail03.jpg') },
+        { target_str: "/work/4", img: require('./assets/img/work_thumbnail04.jpg') },
+        { target_str: "/work/5", img: require('./assets/img/work_thumbnail05.jpg') },
+        { target_str: "/work/6", img: require('./assets/img/work_thumbnail06.jpg') },
+        { target_str: "/work/7", img: require('./assets/img/work_thumbnail07.jpg') },
+        { target_str: "/work/8", img: require('./assets/img/work_thumbnail08.jpg') },
+        { target_str: "/work/9", img: require('./assets/img/work_thumbnail09.jpg') }
     ]
     
 const design_pdf = [
-    { target_str: "/work/1", img: require('./assets/img/work_thumbnail01.jpg') },
-    { target_str: "/work/2", img: require('./assets/img/work_thumbnail02.jpg') }
+        { target_str: "/work/1", img: require('./assets/img/work_thumbnail01.jpg') },
+        { target_str: "/work/2", img: require('./assets/img/work_thumbnail02.jpg') }
     ]
 
 const listItems = numbers.map((number) =>
-      <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} /> </a></li>
-      );
+      <li key={number.img.toString()}><a href={number.target_str}> <img src={number.img} alt={number.img} /> </a></li>
+ );
     
 const Work_Page_Array = [
         { project_name: "Our Poke Place", client_name:"Our Poke Place", project_description:"Create a business website in Wordpress with the client’s brand identity. We also designed it mobile-first with a desktop and mobile stylesheet. We added social media customizations and made it easy to add content for most users.", img: require('./assets/img/work01.jpg'), img2: require('./assets/img/work01.jpg') },

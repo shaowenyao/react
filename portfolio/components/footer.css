@@ -1,2 +1,4 @@
-footer { position: fixed; bottom: 0px; width:100%; } 
-footer span { font-size:10px; color:#fff; }
+footer { background:#eee8e8; padding:10px; }
+footer span { display:inline-block; padding: 0 5px; }
+footer svg { margin:0 5px; }
+footer span, footer a { color:#575151; font-size:12px; }

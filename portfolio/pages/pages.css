@@ -1,35 +1,12 @@
 /*indiv */
-.Home_content { min-height: 500px; }
 li { list-style-type: none; font-size:12px; color:#3e3c38; }
 h5 { color:#3e3c38; }
-.about_page { width:1000px; margin:0 auto; }
 .work_page_thumbnails { width: 360px; margin:0 auto; }
 .work_page_thumbnails li { float:left; display:inline-block; margin:20px 20px 0 0; }
 .half.floatleft.img  img{ width:50%; margin:0 auto; }
-.contact_page a, .project_name, .client_name, .project_description { color:#3e3c38; }
 .floatleft.desc { margin-left: 2%; width:48%; }
 .project_name { display: block;  font-size:13px; }
 .client_name  { display: block; font-size:15px; font-weight:bold;}
 .project_description  { display: block; font-size:12px; width:35%; margin-top:20px; }
 .Home_content h5 { text-align: center; width:100%; }
 .Mobile_homepage_content { display:none;}
-@media (max-width: 767px) {
-  .navNarrowBtn { cursor: pointer; color:#fff; text-align: left; float:left; margin:10px; }
-  .navNarrow { width: 100%; display:block; }
-  nav, .narrowLinks { display:block; width: 100%; }
-  .about_page h5 { font-size:14px; }
-  .about_page li { font-size:10px; display:block; margin:5px 0; }
-  header, main, footer { float:left; clear:both; }
-  .Work_page .img, .Work_page .desc { width: 100%; float:left; clear:both;}
-  .half.floatleft.img  img, .floatleft.desc { width: 100%; }
-  .floatleft.desc { margin-top:50px; }
-  .project_description { width: 90%; }
-  .about_page { width: 100%; }
-  .contact_page, .about_page { text-align:left; padding-left:10px; }
-  .about_page { padding-right:10px; }
-  main { margin-top:5px; }
-  header { margin-top:-20px; }
-  .Mobile_header { margin-left:10px; }
-  .narrowLinks a { display:block; padding:15px 0 0 10px; }
-  .Mobile_homepage_content { display:block; padding-left:10px;  }
-}

@@ -20,12 +20,12 @@
 
 /* DESKTOP */
 body #desktopMenu #logo { width:85%; }
-body #desktopMenu #logo img { width:15%; height:auto; } 
+body #desktopMenu #logo img { width:30%; height:auto; } 
 body #header #desktopMenu .nav-link { padding-left:0.25em; padding-right:0.25em; color:#575151; }
 body #header #desktopMenu .textlink { padding-top: 30px; display: inline-block; }
 
 /* MOBILE */
 body #mobileMenu #logo { width:30%; display:inline-block;}
-body #mobileMenu #logo img { width:100%; height:auto;}
+body #mobileMenu #logo img { width:50%; height:auto;}
 body #mobileContainer { color:#575151; }
-body #mobileMenu .nav-link { font-size:1.5em; padding-right:5%; }
+body #mobileMenu .nav-link { font-size:1.2em; padding-right:5%; }

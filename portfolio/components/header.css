@@ -1,5 +1,5 @@
 /* SWITCH */
-@media only screen and (max-width:769px) {
+@media only screen and (max-width:767px) {
     #mobileMenu { display:block; } 
     #desktopMenu { display:none; }
 }
@@ -8,13 +8,13 @@
     #desktopMenu { display:block; }
 }
 @media only screen and (min-width:820px) {
-    body #desktopMenu #logo { width:88% !important; }
+    body #desktopMenu #logo { width:87% !important; }
 }
 @media only screen and (min-width:1024px) {
-    body #desktopMenu #logo { width:90% !important; }
+    body #desktopMenu #logo { width:88% !important; }
 }
 @media only screen and (min-width:1280px) {
-    body #desktopMenu #logo { width:94% !important; }
+    body #desktopMenu #logo { width:90% !important; }
 }
 
 

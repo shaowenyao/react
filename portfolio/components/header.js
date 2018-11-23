@@ -25,7 +25,7 @@ class Header extends React.Component {
           <Nav className="nav">
             <NavLink className="nav-link text-left" id="logo" href="/"><img src={logo} alt="logo"  /></NavLink>
             <NavLink className="nav-link text-right align-bottom textlink" href="/">work</NavLink>
-            <NavLink className="nav-link text-right align-baseline textlink"  href="/about">about</NavLink>
+            <NavLink className="nav-link text-right align-baseline textlink" href="/about">about</NavLink>
           </Nav>
         </div>
         <div id="mobileMenu">

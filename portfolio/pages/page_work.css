@@ -1,0 +1,24 @@
+.workThumb { position:relative; }
+.workThumb .hover {
+    display:none;
+    position:absolute;
+    background-color:rgb(204, 204, 204, 0.9);
+    padding:10px 20px 10px 10px; 
+    color:#fff; 
+    bottom:0;
+}
+.workThumb:hover .hover { display:block; }
+body .col { padding:0 !important; margin:15px 0px 0px 15px !important}
+body .row { padding-left:15px !important; }
+.work_page_thumbnails li { white-space: pre-wrap; }
+
+@media only screen and (max-width:767px) {
+   main img, main .col { width:90vw !important; height: auto !important; }
+   body .row > div { min-width: 100vw !important; max-height:50vh; overflow:hidden; margin-bottom:15px; }
+   
+}
+@media only screen and (min-width:768px) {
+    .work_page_thumbnails_container{ overflow:hidden; height:25vh;}
+}
+
+

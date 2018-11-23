@@ -1,12 +1,6 @@
 /*indiv */
-li { list-style-type: none; font-size:12px; color:#3e3c38; }
-h5 { color:#3e3c38; }
-.work_page_thumbnails { width: 360px; margin:0 auto; }
-.work_page_thumbnails li { float:left; display:inline-block; margin:20px 20px 0 0; }
-.half.floatleft.img  img{ width:50%; margin:0 auto; }
-.floatleft.desc { margin-left: 2%; width:48%; }
-.project_name { display: block;  font-size:13px; }
-.client_name  { display: block; font-size:15px; font-weight:bold;}
-.project_description  { display: block; font-size:12px; width:35%; margin-top:20px; }
-.Home_content h5 { text-align: center; width:100%; }
-.Mobile_homepage_content { display:none;}
+li { list-style-type: none; }
+
+@media only screen and (max-width:767px) {
+    img { width:100%; }
+}

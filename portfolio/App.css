@@ -354,3 +354,5 @@ template {
 html { overflow-y:scroll; }
 body { background:#fff; }
 body a, body a:hover { text-decoration: none; }
+a:focus, a.active { color:#0056b3 !important; }
+main { padding-bottom: 7%; }

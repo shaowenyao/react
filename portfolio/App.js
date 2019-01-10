@@ -5,7 +5,6 @@ import Footer from './components/footer';
 import { MainRouter } from './components/mainRouter';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//test
 
 const App = () => (
   <BrowserRouter>

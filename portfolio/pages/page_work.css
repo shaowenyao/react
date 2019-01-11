@@ -16,5 +16,5 @@ body .row { padding-left:15px !important; }
 body .projdesc { padding:15px; background:#ebe9e9; }
 body .projdesc p { white-space: pre-wrap; }
 body .projImg  { width:100%; margin-top:15px; }
-.work_page { background: #f3eeee; padding: 20px 0; }
+.work_page { background: #e9ecef; padding: 20px 0; }
 .workThumb img:hover { background-color:black; opacity: 0.3; }
